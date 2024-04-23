@@ -89,6 +89,20 @@
             transform: scale(1);
         }
 
+        .beer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 78px);
+            background: url("background.jpg") no-repeat center center/cover;
+            color: #00827F;
+            text-align: center;
+            padding: 0 20px;
+            transition: height 0.3s ease;
+            flex-direction: column;
+            position: relative;
+        }
+        
         .hero {
             display: flex;
             justify-content: center;
@@ -238,6 +252,8 @@
 <div class="hero">
     <h1>UPLIFT</h1>
     <p>Creating New Opportunities...</p>
+</div>
+<div class="beer">
     <a href="https://t.me/+sc4TOb2GvQwwMzFk" class="cta-button">Join Our Telegram</a>
     <div class="arrow-down"></div>
 </div>
