@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.ico" type="image/x-icon">
+    <title>The Insight Investors - Forex and Bitcoin Trading</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #000;
+            color: #fff;
+            padding: 20px 40px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav #logo {
+            display: flex;
+            align-items: center;
+        }
+
+        nav #logo img {
+            height: 40px;
+        }
+
+        nav #logo span {
+            margin-left: 10px;
+            font-weight: bold;
+        }
+
+        /* Header Nav Bar Tabs */
+
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #0088cc;
+        }
+
+        nav ul li a:before {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #0088cc;
+            border-radius: 50%;
+            top: -5px;
+            right: -5px;
+            opacity: 0;
+            transform: scale(0);
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover:before {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 78px);
+            background: url("background.png") no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 0 20px;
+            transition: height 0.3s ease;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #0088cc;
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #005f88;
+        }
+
+        /* Add margin-top equal to the height of the navbar */
+        main {
+            max-width: 1140px;
+            margin: 140px auto;  /* increase top margin */
+            padding: 20px;
+            text-align: center;
+        }
+
+        section {
+            background: #fff;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            padding: 20px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        section h2,
+        section h3 {
+            margin-bottom: 15px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .header-line {
+            width: 100%;
+            height: 1px;
+            background-color: #000;
+        }
+
+        .arrow-down {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .arrow-down::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 15px solid #fff; /* changed from border-bottom to border-top */
+        }
+
+        .dotted-line {
+            border-top: 1px dotted #000;
+            height: 0px;
+            width: 100%;
+        }
+
+        /* Modify media queries */
+        @media (max-width: 768px) {
+            nav {
+                padding: 10px 20px;  /* decrease padding */
+            }
+            nav #logo {
+                margin-bottom: 0.5rem;  /* decrease bottom margin */
+            }
+            nav ul li {
+                margin-left: 1rem;  /* decrease left margin */
+                margin-bottom: 0.5rem;  /* decrease bottom margin */
+            }
+        }
+        
+        /* Ensure images are not wider than the screen */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+
+    </style>
+</head>
+<body>
+    <nav>
+        <div id="logo">
+            <a href="/">
+                <img src="logo.png" alt="Insight Logo">
+            </a>
+            <span>INSIGHT</span>
+        </div>
+        <ul>
+            <li><a href="/free">Free</a></li>
+            <li><a href="/advanced">Advanced</a></li>
+            <li><a href="/courses">Courses</a></li>
+
+        </ul>
+    </nav>
+
+<div class="hero">
+    <h1>INSIGHT INVESTORS</h1>
+    <p>Turning Complexity into Opportunity...</p>
+    <a href="https://t.me/+sc4TOb2GvQwwMzFk" class="cta-button">Join Our Telegram</a>
+    <div class="arrow-down"></div>
+</div>
+
+    <div class="header-line"></div>
+
+    <main>
+        <section>
+            <h2>What We Offer: </h2>
+            <p>We are a platform dedicated to helping you navigate the world of Forex and Bitcoin trading. We have multiple options designed to meet your specific trading needs. You can join our community, enhance your skills with our courses or maximize your profits with our expert trading assistance. Explore our services below:</p>
+            <div style="height: 20px;"></div>
+            <div class="dotted-line"></div>
+            <div style="height: 20px;"></div>
+        </section>
+
+        <section id="free">
+            <a href="/free" style="display: block; text-decoration: none; color: inherit;">
+            <h2>Free</h2>
+            <p>Join our rapidly growing community of traders on Telegram. We provide free signals & key tips that can help you make profitable trades in the Forex and Bitcoin markets.</p>
+            <div style="height: 20px;"></div>
+            <div class="dotted-line"></div>
+            <div style="height: 20px;"></div>
+            </a>
+        </section>
+
+        <section id="advanced">
+            <a href="/advanced" style="display: block; text-decoration: none; color: inherit;">
+                <h2>Advanced</h2>
+                <p>Upgrade to our Advanced Group for premium services. For a monthly fee, you get access to advanced signals, in-depth analysis and comprehensive trading education. It's the ultimate package if you're ready to be serious.</p>
+                <div style="height: 20px;"></div>
+                <div class="dotted-line"></div>
+                <div style="height: 20px;"></div>
+            </a>
+        </section>
+
+        <section id="courses">
+            <a href="/courses" style="display: block; text-decoration: none; color: inherit;">
+            <h2>Courses</h2>
+            <p>If you don't know where to start, check out our courses. We offer 3 options to reach all people wether your a beginner or already an expert. We have the most comprehensive courses and can build your trading knowledge exponentially.</p>
+            <div style="height: 20px;"></div>
+            <div class="dotted-line"></div>
+            <div style="height: 20px;"></div>
+            </a>
+        </section>
+    </main>
+
+
+    <footer>
+        <p>&copy; 2023 Insight. All rights reserved. ( Not Financial Advice )</p>
+    </footer>
+</body>
+</html>
