@@ -115,32 +115,51 @@
             margin-bottom: 20px;
         }
 
-          .cta-button {
-            padding: 15px 30px; /* Increase padding to make buttons larger */
-            color: #fff; /* Set text color to white */
-            text-decoration: none; /* Removes underline from links */
-            border-radius: 8px; /* Slightly larger rounded corners */
-            margin: 10px; /* Adds space around each button */
-            display: inline-block; /* Ensures buttons do not break into new lines */
-            transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-        }
-        
-        .cta-button:first-of-type {
-            background-color: #0088cc; /* Color for the first button */
-        }
-        
-        .cta-button:last-of-type {
-            background-color: #34a853; /* Color for the second button */
-            margin-left: 20px; /* Additional left margin to create space between buttons */
-        }
-        
-        .cta-button:hover {
-            background-color: #005577; /* Darken the button on hover for the first button */
-        }
-        
-        .cta-button:last-of-type:hover {
-            background-color: #0f6b21; /* Darken the button on hover for the second button */
-        }
+     .cta-button {
+        padding: 15px 30px; /* Button size */
+        color: #fff; /* Text color */
+        text-decoration: none; /* No underline */
+        border-radius: 8px; /* Rounded corners */
+        margin: 10px; /* Space around each button */
+        display: inline-block; /* Display as inline-block */
+        background-image: linear-gradient(145deg, rgba(255, 255, 255, 0.25) 10%, transparent 10%); /* Shiny effect */
+        transition: background-color 0.3s ease; /* Smooth transition for hover */
+        position: relative; /* Required for absolute positioning of pseudo-elements */
+        overflow: hidden; /* Keeps pseudo-elements within the button boundaries */
+    }
+    
+    .cta-button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%; /* Start from the left */
+        width: 100%; /* Full width of the button */
+        height: 100%; /* Full height of the button */
+        background-image: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.8), transparent); /* Light shine gradient */
+        transition: all 0.75s; /* Animation speed */
+    }
+    
+    .cta-button:hover::before {
+        left: 100%; /* Move the light shine across the button on hover */
+    }
+    
+    .cta-button:first-of-type {
+        background-color: #0088cc; /* Blue background */
+    }
+    
+    .cta-button:last-of-type {
+        background-color: #34a853; /* Green background */
+        margin-left: 20px; /* Space between buttons */
+    }
+    
+    .cta-button:hover {
+        background-color: #005577; /* Darken on hover for the first button */
+    }
+    
+    .cta-button:last-of-type:hover {
+        background-color: #0f6b21; /* Darken on hover for the second button */
+    }
+
 
 
 
