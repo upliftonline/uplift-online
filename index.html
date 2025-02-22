@@ -1,396 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="logo.ico" type="image/x-icon">
-    <title>Uplift - Financial Freedom</title>
+    <title>Insight - $INSIGHT Memecoin</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Orbitron', sans-serif; /* Modern sci-fi font */
         }
 
         body {
-            background: #f5f5f5;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #000;
-            color: #fff;
-            padding: 20px 40px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-            z-index: 1000;  /* Ensures the navbar is above other content */
-        }
-
-        nav #logo {
-            display: flex;
-            align-items: center;
-        }
-
-        nav #logo img {
-            height: 40px;
-        }
-
-        nav #logo span {
-            margin-left: 10px;
-            font-weight: bold;
-        }
-
-        /* Header Nav Bar Tabs */
-
-
-        nav ul {
-            list-style-type: none;
-            display: flex;
-        }
-
-        nav ul li {
-            margin-left: 2rem;
-            position: relative;
-        }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            position: relative;
-            transition: color 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            color: #0088cc;
-        }
-
-        nav ul li a:before {
-            content: '';
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background-color: #0088cc;
-            border-radius: 50%;
-            top: -5px;
-            right: -5px;
-            opacity: 0;
-            transform: scale(0);
-            transition: all 0.3s ease;
-        }
-
-        nav ul li a:hover:before {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: calc(100vh - 78px);
-            background: url("IMG_4713.jpeg") no-repeat center center/cover;
-            color: #fff;
+            overflow: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 90%;
             text-align: center;
-            padding: 0 20px;
-            transition: height 0.3s ease;
-            flex-direction: column;
+            padding: 40px;
             position: relative;
+            z-index: 1;
         }
 
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-        }
-
-        .hero p {
-            font-size: 2rem;
+        h1 {
+            font-size: 4rem;
+            color: #00d4ff;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.7);
             margin-bottom: 20px;
+            animation: glow 2s ease-in-out infinite alternate;
         }
 
-     .cta-button {
-        padding: 15px 30px; /* Button size */
-        color: #fff; /* Text color */
-        text-decoration: none; /* No underline */
-        border-radius: 8px; /* Rounded corners */
-        margin: 10px; /* Space around each button */
-        display: inline-block; /* Display as inline-block */
-        background-image: linear-gradient(145deg, rgba(255, 255, 255, 0.25) 10%, transparent 10%); /* Shiny effect */
-        transition: background-color 0.3s ease; /* Smooth transition for hover */
-        position: relative; /* Required for absolute positioning of pseudo-elements */
-        overflow: hidden; /* Keeps pseudo-elements within the button boundaries */
-    }
-    
-    .cta-button::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%; /* Start from the left */
-        width: 100%; /* Full width of the button */
-        height: 100%; /* Full height of the button */
-        background-image: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.8), transparent); /* Light shine gradient */
-        transition: all 0.75s; /* Animation speed */
-    }
-    
-    .cta-button:hover::before {
-        left: 100%; /* Move the light shine across the button on hover */
-    }
-    
-    .cta-button:first-of-type {
-        background-color: #0088cc; /* Blue background */
-    }
-    
-    .cta-button:last-of-type {
-        background-color: #34a853; /* Green background */
-        margin-left: 20px; /* Space between buttons */
-    }
-    
-    .cta-button:hover {
-        background-color: #005577; /* Darken on hover for the first button */
-    }
-    
-    .cta-button:last-of-type:hover {
-        background-color: #0f6b21; /* Darken on hover for the second button */
-    }
-
-        /* Add margin-top equal to the height of the navbar */
-        main {
-            max-width: 1140px;
-            margin: 140px auto;  /* increase top margin */
-            padding: 20px;
-            text-align: center;
+        .ticker {
+            font-size: 1.5rem;
+            color: #ffd700;
+            margin-bottom: 30px;
         }
 
-        section {
-            background: #fff;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            margin-bottom: 20px;
-            padding: 20px;
-            transition: box-shadow 0.3s ease;
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #b0c4de;
+            max-width: 600px;
+            margin: 0 auto 40px;
         }
 
-        section:hover {
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+        .image-container {
+            margin: 30px 0;
         }
 
-        section h2,
-        section h3 {
-            margin-bottom: 15px;
-        }
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .header-line {
-            width: 100%;
-            height: 1px;
-            background-color: #000;
-        }
-
-        .arrow-down {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .arrow-down::before {
-            content: '';
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            border-top: 15px solid #fff; /* changed from border-bottom to border-top */
-        }
-
-        .dotted-line {
-            border-top: 1px dotted #000;
-            height: 0px;
-            width: 100%;
-        }
-
-        #reviews {
-            text-align: center;
-            padding: 20px;
-        }
-        
-        .review-bubble {
-            display: inline-block;
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 15px;
-            margin: 10px 0;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            max-width: 600px; /* Adjust the width as needed */
-            text-align: left; /* Keep the text left-aligned inside the bubble */
-        }
-        
-        .review-bubble p {
-            font-size: 16px;
-            line-height: 1.5;
-            margin: 0 0 10px 0;
-        }
-        
-        .review-bubble span {
-            display: block;
-            font-size: 14px;
-            color: #555;
-            text-align: right;
-        }
-
-
-        /* Modify media queries */
-        @media (max-width: 768px) {
-            nav {
-                padding: 10px 20px;  /* decrease padding */
-            }
-            nav #logo {
-                margin-bottom: 0.5rem;  /* decrease bottom margin */
-            }
-            nav ul li {
-                margin-left: 1rem;  /* decrease left margin */
-                margin-bottom: 0.5rem;  /* decrease bottom margin */
-            }
-        }
-        
-        /* Ensure images are not wider than the screen */
-        img {
+        .image-container img {
             max-width: 100%;
             height: auto;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+            transition: transform 0.3s ease;
         }
 
+        .image-container img:hover {
+            transform: scale(1.05);
+        }
 
+        .telegram-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            color: #fff;
+            background: linear-gradient(90deg, #00d4ff, #007bff);
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .telegram-btn:hover {
+            background: linear-gradient(90deg, #007bff, #00d4ff);
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.8);
+            transform: translateY(-5px);
+        }
+
+        /* Background Animation */
+        .bg-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/dark-mosaic.png');
+            opacity: 0.1;
+            z-index: 0;
+            animation: move 20s linear infinite;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px rgba(0, 212, 255, 0.5); }
+            to { text-shadow: 0 0 25px rgba(0, 212, 255, 0.9); }
+        }
+
+        @keyframes move {
+            0% { background-position: 0 0; }
+            100% { background-position: 1000px 1000px; }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .ticker { font-size: 1.2rem; }
+            p { font-size: 1rem; }
+            .telegram-btn { padding: 12px 30px; font-size: 1rem; }
+        }
     </style>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16588287880"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-16588287880');
-</script>
-    
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav>
-        <div id="logo">
-            <a href="/">
-                <img src="logo.png" alt="Logo">
-            </a>
-            <span>UPLIFT</span>
+    <div class="bg-particles"></div>
+    <div class="container">
+        <h1>Insight</h1>
+        <div class="ticker">$INSIGHT</div>
+        <p>Welcome to Insight - the memecoin that sees beyond the hype. Join the revolution, gain the vision, and ride the wave to the moon!</p>
+        <div class="image-container">
+            <img src="image.png" alt="Insight Memecoin Image">
         </div>
-        <ul>
-            <li><a href="/free">Free</a></li>
-            <li><a href="/advanced">Advanced</a></li>
-            <li><a href="/courses">Courses</a></li>
-
-        </ul>
-    </nav>
-
-<div class="hero">
-    <h1>UpLift</h1>
-    <p>Creating new opportunites every day...</p>
-    <a href="https://uplift-invest.com/advanced" class="cta-button">Click Here to Join Our Exclusive Community!</a>
-    <a href="https://t.me/+sc4TOb2GvQwwMzFk" class="cta-button">Click Here for Our Free Group</a>
-    <div class="arrow-down"></div>
-</div>
-
-<section id="reviews">
-    <h2>What Our Members Say:</h2>
-    
-    <div class="review-bubble">
-        <p>"Joining UpLift was a game-changer for me. The insights and strategies have doubled my investment in just three months!"</p>
-        <span>- @emily_rocks92</span>
+        <a href="https://t.me/your_telegram_link" target="_blank" class="telegram-btn">Join Us on Telegram</a>
     </div>
-    
-    <div class="review-bubble">
-        <p>"The community support is fantastic. I've learned so much from the group chats and webinars. Highly recommend!"</p>
-        <span>- @marktrando45</span>
-    </div>
-    
-    <div class="review-bubble">
-        <p>"I was new to crypto trading, but the UpLift courses made it so easy to understand and get started. Now I'm trading like a pro!"</p>
-        <span>- @sarah_crypto21</span>
-    </div>
-
-    <div class="review-bubble">
-        <p>"The free signals provided by UpLift are incredibly accurate. I've made consistent profits since joining!"</p>
-        <span>- @john_doe_fx99</span>
-    </div>
-    
-    <div class="review-bubble">
-        <p>"UpLift's advanced group is worth every penny. The detailed analysis and premium signals have significantly improved my trading results."</p>
-        <span>- @lisaK_trades88</span>
-    </div>
-    
-    <div class="review-bubble">
-        <p>"The courses offered by UpLift are top-notch. They cover everything from the basics to advanced strategies. Highly educational!"</p>
-        <span>- @michael.t_edu77</span>
-    </div>
-</section>
-
-
-    <main>
-        <section>
-            <h2>What We Offer: </h2>
-            <p>We are a platform dedicated to helping you navigate the world of Forex and Bitcoin trading. We have an array of options designed to meet your specific trading needs. You can join our community now for free, enhance your skills with our courses or maximize profits with our exclusive trading group.</p>
-            <div style="height: 20px;"></div>
-            <div class="dotted-line"></div>
-            <div style="height: 20px;"></div>
-        </section>
-
-        <section id="free">
-            <a href="/free" style="display: block; text-decoration: none; color: inherit;">
-            <h2>Free</h2>
-            <p>Join our rapidly growing community of traders on Telegram. We provide free signals & key tips that can help you make profitable trades in the Forex and Bitcoin markets. Join now and we will be in touch within 24Hrs!</p>
-            <div style="height: 20px;"></div>
-            <div class="dotted-line"></div>
-            <div style="height: 20px;"></div>
-            </a>
-        </section>
-
-        <section id="advanced">
-            <a href="/advanced" style="display: block; text-decoration: none; color: inherit;">
-                <h2>Advanced</h2>
-                <p>Upgrade to our Advanced Group for premium services. For a monthly fee, you get access to advanced signals, in-depth analysis and comprehensive trading education. It's the ultimate package if you're ready to be serious.</p>
-                <div style="height: 20px;"></div>
-                <div class="dotted-line"></div>
-                <div style="height: 20px;"></div>
-            </a>
-        </section>
-
-        <section id="courses">
-            <a href="/courses" style="display: block; text-decoration: none; color: inherit;">
-            <h2>Courses</h2>
-            <p>If you don't know where to start, check out our courses. We offer 3 options to cover all skill levels; wether your a beginner or already an expert, we have the most comprehensive courses out there. If your switched on, we can build your trading knowledge exponentially starting now...</p>
-            <div style="height: 20px;"></div>
-            <div class="dotted-line"></div>
-            <div style="height: 20px;"></div>
-            </a>
-        </section>
-    </main>
-
-
-    <footer>
-        <p>&copy; 2023 UpLift, All rights reserved ( Not Financial Advice )</p>
-    </footer>
 </body>
 </html>
